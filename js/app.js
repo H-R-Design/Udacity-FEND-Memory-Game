@@ -133,25 +133,25 @@ function movesCounter(){
         startTimer();
         //starRating();
     }
-    /*if (moves <= 5) {
+    if (moves <= 5) {
          stars.innerHTML = "<li><i class='fa fa-star'></i></li><li><i class='fa fa-star'></i></li><li><i class='fa fa-star'></i></li>";
       } else if (moves > 6 && moves < 15) {
           stars.innerHTML = "<li><i class='fa fa-star'></i></li><li><i class='fa fa-star'></i></li>";
       } else if (moves > 16) {
           stars.innerHTML = "<li><i class='fa fa-star'></i></li>";
-    }*/
+    }
 }
 //star Rating:
 //once 25 cards have been opend(an opportunity to view all cards in deck) one star is made invisible.
-//function starRating(){
-    //if(moves > 5 && moves < 10){
-       // stars[0].style.visibility= 'collapse';
-    //}
+function starRating(){
+    if(moves > 5 && moves < 10){
+       stars[0].style.visibility= 'collapse';
+    }
     //once more than 31 cards have been opended only one star is visible.
-    //else if (moves > 11){
-    //    stars[1].style.visibility= 'collapse';
-    //}
-//}
+    else if (moves > 11){
+       stars[1].style.visibility= 'collapse';
+    }
+}
 //timer
 function startTimer(){
     interval= setInterval(function(){
