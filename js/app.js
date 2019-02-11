@@ -3,7 +3,7 @@
 const card = document.querySelectorAll('.card');
 const deck = document.querySelector('.deck');
 const counter= document.querySelector('.moves');
-//const stars= document.querySelectorAll('.fa-star');
+const stars= document.querySelectorAll('.fa-star');
 const timer= document.querySelector('.timer');
 const refresh= document.querySelector('.fa-repeat')
 
@@ -18,7 +18,7 @@ let firstCard, secondCard;
 let cardsMatch = false;
 let second= 0; minute= 0;
 let interval;
-/*let openCards= [] ;*/
+let openCards= [];
 
 // start of functions need to make the game work:
 document.body.onload= startGame();
@@ -149,7 +149,7 @@ function starRating(){
     }
     //once more than 31 cards have been opended only one star is visible.
     else if (moves > 11){
-       stars[1].style.visibility= 'collapse';
+        stars[1].style.visibility= 'collapse';
     }
 }
 //timer
@@ -163,9 +163,9 @@ function startTimer(){
          }
     },1200);
 }
-/*function stopTimer() {
+function stopTimer() {
     clearInterval(startTimer);
-  }*/
+  }
 /* refresh button: adding an event listener so that if the refresh icon is pressed the 
 startGame function is cl=alled and the cards are shufffled, timer and moves counter are reset.*/
 refresh.addEventListener('click', function(){
