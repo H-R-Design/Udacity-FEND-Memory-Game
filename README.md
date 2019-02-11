@@ -5,7 +5,7 @@ The Memory game task introduced the Java Script language to allow interactive el
 
 - [Installation](#Installation)
 - [How to Play](#How-to-Play)
-- [Current Bugs in the Code:](#Current Bugs in the Code:)
+- [Current Bugs in the Code:](#Current-Bugs-in-the-Code:)
 
 ## Installation
 to Install the game, simply download the zip file to your desktop. double click the zip file to unzip it (on a Mac device) or a file unzipper software to access the folder. 
