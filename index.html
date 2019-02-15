@@ -17,9 +17,9 @@
         </header>
         <section class="score-panel">
         	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"><style display= 'inherit'></style></i></li>
+        		<li><i class="fa fa-star"><style display= 'inherit'></style></i></li>
+        		<li><i class="fa fa-star"><style display= 'inherit'></style></i></li>
         	</ul>
         	<span class="moves"></span> Moves
             <div class="restart">
@@ -77,25 +77,25 @@
                 <i class="fa fa-cube"></i>
             </li>
         </ul>
-        <div id="simple-modal" class="modal" style="display:none;" >
+        <div id="simple-modal" class="modal" style="display: none" >
             <div class="modal-content">
                 <span class="closeBtn">&times;</span>
                 <h1>Well Done! </h1>
                 <div class="final-score">
                     <div class="moves-total">
-                        <p>Moves: <span id=totalMoves></span></p>
+                        <p>Moves: you mad a total of <span id=totalMoves></span> moves </p>
                     </div>
-                    <div class= "score-total">
-                        <p>Score: <span id=starRating></span></p>
+                    <div class="score-total">
+                        <p>Rating: you got a <span id=rating></span> /3 star rating</p>
                     </div>
                     <div class="time-total">
-                        <p>Time: <span id=totalTime></span></p>
+                        <p>Time: <span id=totalMin></span> minutes and <span id=totalSec></span> seconds</p>
                     </div>
                 </div>
                 <div class= "footer">
-                    <button class="play-again">
+                    <button type ="button" class="play-again">
                       <h2>Play again</h2>
-                     </button>
+                    </button>
                 </div>
             </div>
         </div>
