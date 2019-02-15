@@ -5,13 +5,14 @@ const deck = document.querySelector('.deck');
 const counter= document.querySelector('.moves');
 const stars= document.querySelectorAll('.fa-star');
 const timer= document.querySelector('.timer');
-const refresh= document.querySelector('.fa-repeat')
+const refresh= document.querySelector('.fa-repeat');
 
 const modal= document.getElementById('simple-modal');
 const closeBtn= document.getElementsByClassName('closeBtn')[0];
+const playAgainBtn = document.getElementsByClassName('play-again')[0];
 
 let cards = [...card];
-let moves= 0;
+let moves;
 let hasOpenedCard= false;
 let lockBoard= false;
 let firstCard, secondCard;
@@ -19,6 +20,9 @@ let cardsMatch = false;
 let second= 0; minute= 0;
 let interval;
 let openCards= [];
+let matches = 0;
+let totalStars = 3;
+
 
 // start of functions need to make the game work:
 document.body.onload= startGame();
@@ -54,6 +58,12 @@ function startGame(){
     let timer= document.querySelector('.timer');
     timer.innerHTML= "Timer: 0  mins 0  secs";
     clearInterval(interval);  // made 'open' and 'match' lables inactive ***
+
+    stars[0].style.display= 'inherit';
+    stars[1].style.display= 'inherit';
+
+    matches = 0;
+
 }
 
 //event listener for a click action on a card.
@@ -85,19 +95,27 @@ function will be actovated by the openCard function.*/
 
 function doTheyMatch(){
 //if the first card's icon is identical to the second card's icon, run the removeOpenLable function.
+    
     if (firstCard.dataset.icon === secondCard.dataset.icon){
         removeOpenLable();
+        matches++;
+
+        if(matches == 2){
+            showModal();            
+        }
   //else run the restCards function.
     }else{
     resetCards();
     }
+    
+   
 }
 
 function removeOpenLable(){
     firstCard.removeEventListener('click', openCard);
-        secondCard.removeEventListener('click', openCard);
-        console.log('its a match');
-        cardsMatched();
+    secondCard.removeEventListener('click', openCard);
+    console.log('its a match');
+     cardsMatched();
 }
 /*when cards are a match the 'open' tag on HTML is removed nad replaced with a 'match' tag. 
 ^ the event listen for those two cards are then removed so those cards become inactive*/
@@ -125,33 +143,35 @@ function restBoard(){
 
 //moves counter: if a card is open then add 1 to the moves counter using innerHTML for dynamic text. 
 function movesCounter(){
+    
     moves++;
     counter.innerHTML= moves;
+    
     if(moves==1){
         second=0;
         minute=0;
-        startTimer();
-        //starRating();
+        startTimer();  
+              
     }
-    if (moves <= 5) {
-         stars.innerHTML = "<li><i class='fa fa-star'></i></li><li><i class='fa fa-star'></i></li><li><i class='fa fa-star'></i></li>";
-      } else if (moves > 6 && moves < 15) {
-          stars.innerHTML = "<li><i class='fa fa-star'></i></li><li><i class='fa fa-star'></i></li>";
-      } else if (moves > 16) {
-          stars.innerHTML = "<li><i class='fa fa-star'></i></li>";
-    }
+        starRating();  
 }
+
 //star Rating:
 //once 25 cards have been opend(an opportunity to view all cards in deck) one star is made invisible.
 function starRating(){
-    if(moves > 5 && moves < 10){
-       stars[0].style.visibility= 'collapse';
+    if(moves >= 5 && moves <10){
+        stars[0].style.display= 'none';
+        totalStars = 2;
     }
     //once more than 31 cards have been opended only one star is visible.
-    else if (moves > 11){
-        stars[1].style.visibility= 'collapse';
-    }
+   if (moves >= 10){
+        stars[1].style.display= 'none';
+        totalStars = 1;
+   }
+   
 }
+
+
 //timer
 function startTimer(){
     interval= setInterval(function(){
@@ -168,16 +188,20 @@ function stopTimer() {
   }
 /* refresh button: adding an event listener so that if the refresh icon is pressed the 
 startGame function is cl=alled and the cards are shufffled, timer and moves counter are reset.*/
-refresh.addEventListener('click', function(){
-    startGame();
-})
+refresh.addEventListener('click', function()
+{window.location.reload(false)});
 //Well done modal:
 
-/*function showModal(){
+function showModal(){
+    totalMoves.innerHTML= moves;
+    rating.innerHTML= totalStars;
+    totalMin.innerHTML= minute;
+    totalSec.innerHTML = second;
     modal.style.display='inherit';
 }
 closeBtn.addEventListener('click', closeModal);
 window.addEventListener('click', outsideClick);
+playAgainBtn.addEventListener('click', startGameAgain);
 
 function closeModal(){
     modal.style.display='none';
@@ -187,4 +211,7 @@ function outsideClick(){
         modal.style.display='none';
     }
 }
-}*/
+function startGameAgain(){
+    closeModal();
+    window.location.reload(false);
+}
