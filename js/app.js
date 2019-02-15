@@ -100,7 +100,7 @@ function doTheyMatch(){
         removeOpenLable();
         matches++;
 
-        if(matches == 2){
+        if(matches == 8){
             showModal();            
         }
   //else run the restCards function.
