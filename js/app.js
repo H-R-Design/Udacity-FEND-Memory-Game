@@ -77,8 +77,8 @@ function openCard(){
     if (this === firstCard)return;
 
     this.classList.add('open');
-/*sinse the moves counter is dependant on a card being opended the movesCounter 
-function will be actovated by the openCard function.*/
+/*since the moves counter is dependant on a card being opened the movesCounter 
+function will be activated by the openCard function.*/
     movesCounter();
 
 //have two cards been opened?
@@ -157,13 +157,13 @@ function movesCounter(){
 }
 
 //star Rating:
-//once 25 cards have been opend(an opportunity to view all cards in deck) one star is made invisible.
+//aftre 5 moves have been made, one star is made invisible.
 function starRating(){
     if(moves >= 5 && moves <10){
         stars[0].style.display= 'none';
         totalStars = 2;
     }
-    //once more than 31 cards have been opended only one star is visible.
+    //once more than 10 cards have been opended only one star is visible.
    if (moves >= 10){
         stars[1].style.display= 'none';
         totalStars = 1;
@@ -187,7 +187,7 @@ function stopTimer() {
     clearInterval(startTimer);
   }
 /* refresh button: adding an event listener so that if the refresh icon is pressed the 
-startGame function is cl=alled and the cards are shufffled, timer and moves counter are reset.*/
+startGame function is called and the cards are shuffled, timer and moves counter are reset.*/
 refresh.addEventListener('click', function()
 {window.location.reload(false)});
 //Well done modal:
