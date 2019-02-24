@@ -17,4 +17,4 @@ Flip over two tiles at a time to reveal their icon. if the icons match each othe
 Good luck! 
 
 Play the game online
-<a href="https://h-r-design.github.io/Udacity-FEND-Memory-Game/" target="_blank"> here</a>
+<a href="https://h-r-design.github.io/Udacity-FEND-Memory-Game/" target = "_blank"> here</a>
