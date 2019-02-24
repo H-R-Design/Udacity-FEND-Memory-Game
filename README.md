@@ -15,3 +15,6 @@ Once the folder is open, locate the “index.html” file, right click and open 
 
 Flip over two tiles at a time to reveal their icon. if the icons match each other the tile will turn green and remain flipped. Continue to do this till all the tiles on the grid are flipped over and matched. try to beat your best score by finding the pairs faster and in fewer moves. the more stars you have the better your score. 
 Good luck! 
+
+Play the game online
+<a href="https://h-r-design.github.io/Udacity-FEND-Classic-Arcade-Game/" target="_blank"> here</a>
