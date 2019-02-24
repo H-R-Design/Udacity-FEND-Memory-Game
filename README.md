@@ -1,6 +1,6 @@
 # Udacity-FEND-Memory-Game
 The Memory game task introduced the Java Script language to allow interactive elements to our projects. 
-<img src="https://github.com/H-R-Design/Udacity-FEND-Memory-Game/blob/gh-pages/img/Memory%20Game.png" alt="drawing" width="400" height= "431"/>
+<img src="https://github.com/H-R-Design/Udacity-FEND-Memory-Game/blob/gh-pages/img/Memory%20Game.png" alt="drawing" width="500" height= "489"/>
 ## Table of Contents
 
 - [Installation](#Installation)
